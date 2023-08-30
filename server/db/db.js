@@ -4,12 +4,11 @@ require('dotenv').config()
 
 const databaseName = pkg.name;
 
-const config = {
-  logging: false
-};
+const config = {};
 
-if(process.env.LOGGING === 'true'){
-  delete config.logging
+config.logging = false;
+if (process.env.QUIET) {
+  config.logging = false;
 }
 
 //https://stackoverflow.com/questions/61254851/heroku-postgres-sequelize-no-pg-hba-conf-entry-for-host

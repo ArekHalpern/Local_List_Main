@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 const jwt = require('jsonwebtoken')
+const JWT = process.env.JWT;
 const bcrypt = require('bcrypt');
 const axios = require('axios');
 
@@ -34,14 +35,18 @@ User.prototype.generateToken = function() {
 /**
  * classMethods
  */
-User.authenticate = async function({ username, password }){
-    const user = await this.findOne({where: { username }})
-    if (!user || !(await user.correctPassword(password))) {
-      const error = Error('Incorrect username/password');
-      error.status = 401;
-      throw error;
-    }
-    return user.generateToken();
+User.authenticate = async function ({ username, password }) {
+  const user = await this.findOne({
+    where: {
+      username,
+    },
+  });
+  if (user && (await bcrypt.compare(password, user.password))) {
+    return jwt.sign({ id: user.id }, JWT);
+  }
+  const error = new Error("bad credentials");
+  error.status = 401;
+  throw error;
 };
 
 User.findByToken = async function(token) {

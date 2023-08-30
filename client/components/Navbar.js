@@ -18,8 +18,11 @@ const MyNavbar = ({ handleClick, isLoggedIn }) => (
           </>
         ) : (
           <>
-            <Nav.Link href="/login">Login</Nav.Link>
-            <Nav.Link href="/signup">Sign Up</Nav.Link>
+            {/* <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/signup">Sign Up</Nav.Link> */},
+                        <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link href="/search">Search!</Nav.Link>
+            <Nav.Link href="/userprofile/:id">Profile</Nav.Link>
           </>
         )}
       </Nav>

@@ -10,6 +10,7 @@ module.exports = {
     filename: './public/bundle.js'
   },
   devtool: 'source-map',
+  
   module: {
     rules: [
       {
@@ -24,8 +25,9 @@ module.exports = {
       }
     ]
   },
-  plugins:[
+  plugins: [
     new webpack.DefinePlugin({
-      "process.env": JSON.stringify(process.env),
-    })],
+      'process.env.OPENAI_API_KEY': JSON.stringify(process.env.OPENAI_API_KEY),
+    }),
+  ],
 }

@@ -6,11 +6,10 @@ import { LLMChain } from 'langchain/chains';
 
 
 const model = new OpenAI({
-  openAIApiKey: process.env.OPENAI_API_KEY,
+  openAIApiKey: "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",
   temperature: 0,
 });
 
-console.log('here', process.env.OPENAI_API_KEY);
 
 const template1 = "Provide 5 hidden gem restaurants that are affordable to do in the city inputted. Provide a short description of Restaurants using unique adjectives and 3 relevant emojis your response. Your response should be bulleted and in list format.\n City: {city}";
 const prompt1 = new PromptTemplate({ template: template1, inputVariables: ['city'] });

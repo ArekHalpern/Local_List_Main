@@ -2,7 +2,9 @@ import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch, Redirect} from 'react-router-dom'
 import { Login, Signup } from './components/AuthForm';
+import Userprofile from './components/UserProfile';
 import Home from './components/Home';
+import Search from './components/Search.js';
 import {me} from './store'
 
 /**
@@ -21,6 +23,8 @@ class Routes extends Component {
         {isLoggedIn ? (
           <Switch>
             <Route path="/home" component={Home} />
+            <Route exact path="/search" component={Search} />
+            <Route exact path="/userprofile/:id" component={Userprofile} />
             <Redirect to="/home" />
           </Switch>
         ) : (

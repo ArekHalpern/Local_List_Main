@@ -1,3 +1,6 @@
+require("dotenv").config();
+const webpack= require('webpack');
+
 module.exports = {
   entry: [
     './client/index.js'
@@ -20,5 +23,9 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins:[
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(process.env),
+    })],
 }

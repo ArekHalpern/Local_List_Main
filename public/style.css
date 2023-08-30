@@ -1,21 +1,58 @@
 body {
-  font-family: sans-serif;
+  font-family: Helvetica Bold;
+  background-color: #014147;
 }
 
-a {
+.navbar {
+  background-color: #ffd849;
+}
+
+.card {
+  background: #ffd849;
+  color: #000000cc;
+  margin-bottom: 2rem; 
+}
+
+.btn {
+  background-color: #00eeff;
+  color: black;  /* Text color */
+  border: 5px solid #ffd849;  /* Border color and width */
   text-decoration: none;
+  transition: all 0.4s ease;
 }
 
-label {
-  display: block;
+
+.btn:hover, .btn:focus {
+  background: var(--gradient) !important;
+  -webkit-background-clip: none !important;
+  -webkit-text-fill-color: #fff !important;
+  border: 5px solid #fff !important;
+  box-shadow: #222 1px 0 10px;
+  text-decoration: underline;
 }
 
-nav a {
-  display: inline-block;
-  margin: 1em;
+.box {
+  background-color: #e6b400;
+  inline-size: 100px;
+  overflow-wrap: break-word;
 }
 
-form div {
-  margin: 1em;
-  display: inline-block;
+.chatbox {
+  background-color: #ffd849;
+  width: 500px;
+  height: 200px;
+}
+  
+.messages {
+  height: 520px;
+  overflow-y: auto;
+}
+
+
+.message.bot {
+  background-color: #000000;
+}
+
+.welcomeMessage {
+  background-color: #00eeff;
 }

@@ -7,7 +7,7 @@ import { LLMChain } from 'langchain/chains';
 
 
 const model = new OpenAI({
-  openAIApiKey: process.env.OPENAI_API_KEY,
+  openAIApiKey: "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",
   temperature: 0,
 });
 
@@ -52,7 +52,7 @@ const Search = ({ username }) => {
     const results = await Promise.all(chains.map(chain => chain.call({ city: userMessage })));
     setAiResponses(results);
   };
-  console.log(chain1);
+  
 
   const cardTitles = ["Hidden Gem Food:", "Affordable Food:", "Fancy Food:", "Breathtaking Views:", "Nightlife:", "Local Bars:"];
 
@@ -72,7 +72,7 @@ const Search = ({ username }) => {
                 placeholder="✈️ Type a city! ✈️"
               />
               <button type="submit" className="btn btn-primary">
-                Lets Go!
+                Go!
               </button>
             </form>
           </div>

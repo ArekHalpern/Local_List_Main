@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { OpenAI } from "langchain/llms/openai";
@@ -6,7 +7,7 @@ import { LLMChain } from 'langchain/chains';
 
 
 const model = new OpenAI({
-  openAIApiKey: "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",
+  openAIApiKey: process.env.OPENAI_API_KEY,
   temperature: 0,
 });
 

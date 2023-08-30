@@ -8,6 +8,7 @@ import { LLMChain } from 'langchain/chains';
 
 const model = new OpenAI({
   openAIApiKey: "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",
+  modelName: "gpt-3.5-turbo",
   temperature: 0,
 });
 
